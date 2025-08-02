@@ -1,19 +1,16 @@
-[project]
+[tool.poetry]
 name = "semantic-kernel-playground"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "arukikata",email = "ayuki.katayama.kc1@is.naist.jp"}
-]
+authors = ["arukikata"]
 readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-]
+package-mode = false
 
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.dependencies]
+python = ">=3.12,<4.0.0"  # ← ここが正解！
+semantic-kernel = ">=1.35.0,<2.0.0"
+openai = ">=1.98.0,<2.0.0"
+python-dotenv = ">=1.1.1,<2.0.0"
 
 [tool.poetry.group.lint.dependencies]
 black = "^25.1.0"
@@ -21,7 +18,9 @@ isort = "^6.0.1"
 flake8 = "^7.3.0"
 mypy = "^1.17.1"
 
-
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.2.0"
 
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
